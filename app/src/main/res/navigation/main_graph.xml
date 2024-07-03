@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/maps">
+
+    <fragment android:name="com.jamycake.test_task.maps.presentation.map.MapFragment"
+        android:id="@+id/maps"
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/toNameInput"
+            app:destination="@id/nameInputFragment" />
+        <action
+            android:id="@+id/toPointOptions"
+            app:destination="@id/pointOptionsFragment" />
+        <action
+            android:id="@+id/toLocationDisabled"
+            app:destination="@id/locationDisabledFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/nameInputFragment"
+        android:name="com.jamycake.test_task.maps.presentation.name_input.NameInputFragment"
+        android:label="NameInputFragment"
+        tools:layout="@layout/fragment_name_input">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/pointOptionsFragment"
+        android:name="com.jamycake.test_task.maps.presentation.point_options.PointOptionsFragment"
+        android:label="PointOptionsFragment"
+        tools:layout="@layout/fragment_point_options"/>
+    <dialog
+        android:id="@+id/locationDisabledFragment"
+        android:name="com.jamycake.test_task.maps.presentation.location_disabled.LocationDisabledFragment"
+        android:label="LocationDisabledFragment"
+        tools:layout="@layout/fragment_location_disabled"/>
+
+
+</navigation>
